@@ -1,3 +1,25 @@
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+
+import { requestGetSkills } from "@services/SkillServices";
+
+const programing_languages = ref<string[]>([]);
+
+const frameworks = ref<Record<string, string[]>>({});
+
+const databases = ref<Record<string, string[]>>({});
+
+const tools = ref<Record<string, string[]>>({});
+
+onMounted(() => {
+  const skills = requestGetSkills();
+  programing_languages.value = skills.programing_languages;
+  frameworks.value = skills.frameworks;
+  databases.value = skills.databases;
+  tools.value = skills.tools;
+});
+</script>
+
 <template lang="pug">
 motion(id="skills" is="section" preset="slideVisibleBottom" class="sm:px-8 m-8" :delay="200" :duration="1000")
   h2.text-4xl.font-bold.mb-8.underline.decoration-sky-500.underline-offset-8.decoration-4 SKILLS
@@ -37,31 +59,3 @@ motion(id="skills" is="section" preset="slideVisibleBottom" class="sm:px-8 m-8" 
           span.ml-8 {{ items.join(', ') }}
 
 </template>
-
-<script setup lang="ts">
-
-import { ref } from 'vue'
-
-const programing_languages = ref(['JavaScript', 'Python', 'TypeScript', 'Java'])
-
-const frameworks = ref({
-  'Frontend': ['Angular', 'React', 'Vue.js', 'Svelte', 'Reflex'],
-  'Backend': ['Django', 'Flask', 'Fastify', 'FastAPI','Dash'],
-  'Otros': ['Node.js', 'NPM', 'Vite', 'Bun', 'UV', 'Celery'],
-  'Testing': ['Karma', 'Jest', 'Jasmine', 'Unittest', 'Pytest']
-})
-
-const databases = ref({
-  'Relacionales': ['MySQL', 'PostgreSQL'],
-  'No relacionales': ['MongoDB', 'DynamoDB']
-})
-
-const tools = ref({
-  'Control de versiones': ['Git'],
-  'Estilos': ['Bootstrap', 'Bulma', 'Quasar', 'Angular Material', 'Tailwind CSS'],
-  'Cloud y DevOps': ['AWS (EC2, Lambda, S3, RDS, ...)', 'Docker'],
-  'Automatización': ['Bash scripting', 'Cron', 'Jenkins', 'SonarQube'],
-  'Metodologías Ágiles': ['SCRUM', 'Kanban']
-})
-
-</script>

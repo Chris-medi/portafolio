@@ -1,12 +1,14 @@
-import { defineConfig, AliasOptions } from "vite";
+import { defineConfig } from "vitest/config";
 import vue from "@vitejs/plugin-vue";
-import tailwindcss from "@tailwindcss/vite";
 import { resolve } from "path";
-import eslint from "vite-plugin-eslint";
+import { AliasOptions } from "vite";
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [tailwindcss(), vue(), eslint()],
+  plugins: [vue()],
+  test: {
+    testTimeout: 10000,
+    environment: "happy-dom",
+  },
   resolve: {
     alias: {
       "@": resolve(__dirname, "./"),

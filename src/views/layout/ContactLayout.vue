@@ -1,3 +1,33 @@
+<script setup lang="ts">
+import InputComponent from "@components/InputComponent.vue";
+import ModalComponent from "@components/ModalComponent.vue";
+import MapComponent from "@components/MapComponent.vue";
+
+import { sendForm } from "@services/ContacServices";
+
+import { ref } from "vue";
+
+const modal_show = ref(false);
+const model_message = ref("");
+const modal_type = ref("");
+
+async function submitForm(event: Event) {
+  const form = event.target as HTMLFormElement;
+  if (!form.checkValidity()) return false;
+  const form_data = new FormData(form);
+  try {
+    const response = await sendForm(form_data);
+    if (response.status !== 200) throw Error("Error en el servidor");
+    modal_show.value = true;
+    model_message.value = "Your message has been sent successfully";
+    modal_type.value = "success";
+  } catch (error) {
+    modal_show.value = true;
+    model_message.value = "Error sending form, please try again later";
+    modal_type.value = "error";
+  }
+}
+</script>
 <template lang="pug">
 motion(id="skills" is="section" preset="slideVisibleBottom" class="sm:px-8 m-8" :delay="200" :duration="1000")
   section.space-y-12(id="contact" class="sm:px-8 m-8 mb-16")
@@ -13,14 +43,13 @@ motion(id="skills" is="section" preset="slideVisibleBottom" class="sm:px-8 m-8" 
             .mt-2
               InputComponent(id="first-name" type="text" placeholder="John")
           div(class="sm:col-span-3")
-            label.block.font-medium.text-gray-900(for="Subject" class="text-sm/6") Subject
+            label.block.font-medium.text-gray-900(for="subject" class="text-sm/6") Subject
             .mt-2
-              InputComponent(id="Subject" type="text" placeholder="I'm interested in your profile")
+              InputComponent(id="subject" type="text" placeholder="I'm interested in your profile")
         div.w-full.mt-10
           label.block.font-medium.text-gray-900(for="email" class="text-sm/6") Email address
           InputComponent(id="email" type="email" placeholder="example@example.com" class="mt-2")
           .col-span-full
-
         .mt-10
           label.block.font-medium.text-gray-900(for='messages' class='text-sm/6') Messages
           textarea#messages.block.w-full.rounded-md.bg-white.px-3.text-base.text-gray-900.outline-1.-outline-offset-1.outline-gray-300.mt-2(name='messages' rows='3' class='py-1.5 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6')
@@ -28,40 +57,3 @@ motion(id="skills" is="section" preset="slideVisibleBottom" class="sm:px-8 m-8" 
           button.rounded-md.bg-sky-600.px-3.py-3.text-sm.font-semibold.text-white.shadow-xs.my-4(type='submit' class='hover:bg-sky-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600') Submit messages
     ModalComponent(:show="modal_show" @close="modal_show=false" :message="model_message" :type="modal_type")
 </template>
-
-<script setup lang="ts">
-import InputComponent from '../components/InputComponent.vue';
-
-import ModalComponent from '../components/ModalComponent.vue';
-import MapComponent from '../components/MapComponent.vue';
-
-import { ref } from 'vue'
-
-const modal_show = ref(false)
-const model_message = ref('')
-const modal_type = ref('')
-
-function submitForm(event: Event) {
-  const URL = "https://formsubmit.co/45941d49d1f50cadaabc88c24b258401"
-  event.preventDefault()
-  const form_data = new FormData(event.target as HTMLFormElement)
-  fetch(URL, {
-    method: "POST",
-    body: form_data,
-  })
-  .then(response => {
-    console.log(response)
-    if (response.status !== 200) throw Error('Error en el servidor')
-    modal_show.value = true
-    model_message.value = 'Your message has been sent successfully'
-    modal_type.value = 'success'
-  })
-  .catch(error => {
-    console.log(error)
-    modal_show.value = true
-    model_message.value = 'Error sending form, please try again later'
-    modal_type.value = 'error'
-  })
-}
-
-</script>

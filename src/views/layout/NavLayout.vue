@@ -1,25 +1,30 @@
 <script setup lang="ts">
-import { Disclosure, DisclosureButton,DisclosurePanel } from '@headlessui/vue'
-import { Bars3Icon, XMarkIcon, GlobeAsiaAustraliaIcon } from '@heroicons/vue/24/outline'
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  GlobeAsiaAustraliaIcon,
+} from "@heroicons/vue/24/outline";
 
-import { ref } from "vue"
+import { ref } from "vue";
 const navigation = [
-  { name: 'Home', href: '#header', target: 'header'},
-  { name: 'About', href: '#about', target: 'about'},
-  { name: 'Skills', href: '#skills', target: 'skills' },
-  { name: 'Projects', href: '#projects', target: 'projects'},
-  { name: 'Contact', href: '#contact', target: 'contact'},
-]
+  { name: "Home", href: "#header", target: "header" },
+  { name: "About", href: "#about", target: "about" },
+  { name: "Skills", href: "#skills", target: "skills" },
+  { name: "Projects", href: "#projects", target: "projects" },
+  { name: "Contact", href: "#contact", target: "contact" },
+];
 
-const { current_element = 'header' } = defineProps<{ current_element:string }>()
+const { current_element = "header" } = defineProps<{
+  current_element: string;
+}>();
 
-let current = ref(navigation[0].name)
+let current = ref(navigation[0].name);
 
-function clickCurrentLink(e: string){
-  current.value = e
+function clickCurrentLink(e: string) {
+  current.value = e;
 }
 </script>
-
 <template lang="pug">
 Disclosure(as="nav" class="bg-gray-800 fixed w-full z-40" v-slot="{ open }")
   div(class="max-w-lg px-2 sm:px-6 lg:px-8")
