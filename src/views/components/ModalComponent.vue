@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {
+  ExclamationTriangleIcon,
   InformationCircleIcon,
   XMarkIcon,
-  ExclamationTriangleIcon,
 } from "@heroicons/vue/24/outline";
 
 const { show = false, message } = defineProps<{

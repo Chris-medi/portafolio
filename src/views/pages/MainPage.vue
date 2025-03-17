@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { ref, useTemplateRef, onMounted } from "vue";
-import NavLayout from "../layout/NavLayout.vue";
+import { onMounted, ref, useTemplateRef } from "vue";
 import HeaderLayout from "../components/HeaderComponent.vue";
 import AboutMe from "../layout/AboutMeLayout.vue";
-import SkillsLayout from "../layout/SkillsLayout.vue";
-import ProjectsLayout from "../layout/ProjectsLayout.vue";
 import ContactLayout from "../layout/ContactLayout.vue";
 import FooterLayout from "../layout/FooterLayout.vue";
+import NavLayout from "../layout/NavLayout.vue";
+import ProjectsLayout from "../layout/ProjectsLayout.vue";
+import SkillsLayout from "../layout/SkillsLayout.vue";
 
 import { useIntersectionObserver } from "@vueuse/core";
 
@@ -18,9 +18,13 @@ const contact = useTemplateRef<HTMLElement>("contact");
 const footer = useTemplateRef<HTMLElement>("footer");
 
 const current_element = ref("");
-function callback([entries], observer) {
-  if (entries.isIntersecting) {
-    current_element.value = entries.target.id;
+function callback(
+  entries: IntersectionObserverEntry[],
+  observer: IntersectionObserver,
+) {
+  const [entry] = entries;
+  if (entry.isIntersecting) {
+    current_element.value = entry.target.id;
   }
 }
 

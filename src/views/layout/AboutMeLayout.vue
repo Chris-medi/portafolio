@@ -37,3 +37,4 @@ section(id="about" class="sm:px-8 m-8 mb-24")
               | Cristian is always eager to embrace
               | new challenges and stay at the forefront of emerging tech trends.
 </template>
+<script setup lang="ts"></script>

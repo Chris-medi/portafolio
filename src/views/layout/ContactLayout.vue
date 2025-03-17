@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import InputComponent from "@components/InputComponent.vue";
-import ModalComponent from "@components/ModalComponent.vue";
 import MapComponent from "@components/MapComponent.vue";
+import ModalComponent from "@components/ModalComponent.vue";
 
 import { sendForm } from "@services/ContacServices";
 
@@ -16,8 +16,7 @@ async function submitForm(event: SubmitEvent) {
   if (!form.checkValidity()) return false;
   const form_data = new FormData(form);
   try {
-    const response = await sendForm(form_data);
-    if (response.status !== 200) throw Error("Error en el servidor");
+    await sendForm(form_data);
     modal_show.value = true;
     model_message.value = "Your message has been sent successfully";
     modal_type.value = "success";

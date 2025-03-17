@@ -2,7 +2,7 @@
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet";
 
-import { ref, onMounted } from "vue";
+import { onMounted, ref } from "vue";
 
 const map = ref();
 

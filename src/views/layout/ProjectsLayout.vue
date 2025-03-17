@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { LinkIcon } from "@heroicons/vue/24/outline";
-import { ref, onBeforeMount } from "vue";
+import { onBeforeMount, ref } from "vue";
 
 import type { Projects } from "@interfaces/global";
 import { requestGetProject } from "@services/ProjectsServices";

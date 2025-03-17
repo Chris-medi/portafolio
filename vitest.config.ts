@@ -2,9 +2,11 @@ import { defineConfig } from "vitest/config";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
 import { AliasOptions } from "vite";
+import tsconfigPaths from 'vite-tsconfig-paths'
+
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(),tsconfigPaths()],
   test: {
     testTimeout: 10000,
     environment: "happy-dom",

@@ -2,8 +2,8 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import {
   Bars3Icon,
-  XMarkIcon,
   GlobeAsiaAustraliaIcon,
+  XMarkIcon,
 } from "@heroicons/vue/24/outline";
 
 import { ref } from "vue";
@@ -20,7 +20,7 @@ const { current_element = " " } = defineProps<{
   current_element: string;
 }>();
 
-let current = ref(navigation[0].name);
+const current = ref(navigation[0].name);
 
 function clickCurrentLink(e: string) {
   current.value = e;

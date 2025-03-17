@@ -8,7 +8,6 @@ Bienvenido a mi portafolio. Este documento te guiará sobre cómo utilizar este 
 - [Requisitos](#requisitos)
 - [Instalación](#instalación)
 
-
 ## Introducción
 
 Este portafolio presenta mis proyectos y habilidades hasta el momento. Está diseñado para ser fácil de usar y personalizable para el que quiera usarlo.
@@ -17,10 +16,10 @@ Este portafolio presenta mis proyectos y habilidades hasta el momento. Está dis
 - Pug para el html
 - TailwindCSS para estilos
 - y algunas librerias para el frontend y animaciones
-    - @heroicons/vue/24/outline
-    - @headlessui/vue
-    - @vueuse/motion
-    - @vueuse/core
+  - @heroicons/vue/24/outline
+  - @headlessui/vue
+  - @vueuse/motion
+  - @vueuse/core
 
 ## Requisitos
 
@@ -34,21 +33,25 @@ Asegúrate de tener instalado las siguientes dependencias para poder ejecutar es
 Primero pasos para empezar:
 
 1. Clona el repositorio:
+
    ```bash
    git clone https://github.com/Chris-medi/portafolio.git
    ```
 
 2. Accede al directorio del proyecto:
+
    ```bash
    cd portafolio
-   ```  
+   ```
 
 3. Instala las dependencias:
+
    ```bash
    bun install
    ```
 
 4. Ejecuta el proyecto:
+
    ```bash
    bun run dev
    ```
@@ -57,4 +60,3 @@ Primero pasos para empezar:
    ```bash
    bun run test
    ```
-
