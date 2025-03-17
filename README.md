@@ -1,10 +1,60 @@
-# Vue 3 + TypeScript + Vite
+# Mi Portafolio
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Bienvenido a mi portafolio. Este documento te guiará sobre cómo utilizar este proyecto.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Contenido
 
-bun install
-bun run dev
+- [Introducción](#introducción)
+- [Requisitos](#requisitos)
+- [Instalación](#instalación)
 
-bun run build
+
+## Introducción
+
+Este portafolio presenta mis proyectos y habilidades hasta el momento. Está diseñado para ser fácil de usar y personalizable para el que quiera usarlo.
+
+- Esta construido con Vue 3 + TypeScript + Vite
+- Pug para el html
+- TailwindCSS para estilos
+- y algunas librerias para el frontend y animaciones
+    - @heroicons/vue/24/outline
+    - @headlessui/vue
+    - @vueuse/motion
+    - @vueuse/core
+
+## Requisitos
+
+Asegúrate de tener instalado las siguientes dependencias para poder ejecutar este proyecto:
+
+- Bun.sh
+- Git
+
+## Instalación
+
+Primero pasos para empezar:
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Chris-medi/portafolio.git
+   ```
+
+2. Accede al directorio del proyecto:
+   ```bash
+   cd portafolio
+   ```  
+
+3. Instala las dependencias:
+   ```bash
+   bun install
+   ```
+
+4. Ejecuta el proyecto:
+   ```bash
+   bun run dev
+   ```
+
+5. Ejecutar pruebas:
+   ```bash
+   bun run test
+   ```
+
