@@ -16,10 +16,12 @@ export default defineConfig({
       "@components": path.resolve(__dirname, "./src/views/components"),
     } as AliasOptions,
   },
+  base: './',
   plugins: [tailwindcss(), vue(),
     biomePlugin({
       mode: 'format',
       files: './src/',
-      applyFixes: true
-    })],
+      applyFixes: true,
+    })
+  ],
 });
