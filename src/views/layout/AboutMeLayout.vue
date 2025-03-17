@@ -7,9 +7,9 @@ section(id="about" class="sm:px-8 m-8 mb-24")
     | and delivering scalable solutions, Cristian thrives on solving complex problems with clean, efficient code. A lifelong learner and team player,
     | he combines curiosity with a collaborative mindset to drive innovation and create impactful technology.
   .bg-white(class="md:grid-cols-3 grid grid-cols-1 gap-8 pt-12 ")
-    Motion(is="section" preset="slideVisibleLeft" class="md:col-span-1 justify-center items-center flex" :delay="200" :duration="1000")
+    Motion(is="section" preset="slideVisibleOnceLeft" class="md:col-span-1 justify-center items-center flex" :delay="200" :duration="1000")
         img(src="@img/IMG_20240829_150821-Photoroom.png").rounded-full.h-96.w-96.object-cover
-    Motion(is="section" preset="slideVisibleRight" class="md:col-span-2 self-center " :delay="200" :duration="1000")
+    Motion(is="section" preset="slideVisibleOnceRight" class="md:col-span-2 self-center " :delay="200" :duration="1000")
       .space-y-6
         div
           h2.text-2xl.font-bold.text-gray-800.mb-4.flex.items-center
@@ -29,6 +29,10 @@ section(id="about" class="sm:px-8 m-8 mb-24")
               p
                 strong Repositorio:
                 a.text-blue-500(href='https://github.com/Chris-medi?tab=repositories')  https://github.com/Chris-medi?tab=repositories
+
+              p
+                strong LinkedIn:
+                a.text-blue-500(href='https://www.linkedin.com/in/cristian-camilo-medina/')  https://www.linkedin.com/in/cristian-camilo-medina/
             p.text-lg
               | Cristian is always eager to embrace
               | new challenges and stay at the forefront of emerging tech trends.

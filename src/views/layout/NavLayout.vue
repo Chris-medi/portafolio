@@ -13,9 +13,10 @@ const navigation = [
   { name: "Skills", href: "#skills", target: "skills" },
   { name: "Projects", href: "#projects", target: "projects" },
   { name: "Contact", href: "#contact", target: "contact" },
+  { name: "Footer", href: "#footer", target: "footer" },
 ];
 
-const { current_element = "header" } = defineProps<{
+const { current_element = " " } = defineProps<{
   current_element: string;
 }>();
 

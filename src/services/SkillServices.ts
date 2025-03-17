@@ -1,6 +1,6 @@
 import type { Skills } from "@interfaces/global";
 
-export function requestGetSkills(): Skills {
+export async function requestGetSkills(): Promise<Skills> {
   return {
     frameworks: {
       Frontend: ["Angular", "React", "Vue.js", "Svelte", "Reflex"],
@@ -8,7 +8,13 @@ export function requestGetSkills(): Skills {
       Otros: ["Node.js", "NPM", "Vite", "Bun", "UV", "Celery"],
       Testing: ["Karma", "Jest", "Jasmine", "Unittest", "Pytest"],
     },
-    programing_languages: ["JavaScript", "Python", "TypeScript", "Java"],
+    programing_languages: [
+      "JavaScript",
+      "Python",
+      "TypeScript",
+      "Java",
+      "Golang",
+    ],
     databases: {
       Relacionales: ["MySQL", "PostgreSQL"],
       "No relacionales": ["MongoDB", "DynamoDB"],

@@ -24,6 +24,6 @@ onMounted(() => {
 });
 </script>
 <template lang="pug">
-div(id="map" class="w-full h-full min-h-[400px]")
+div(id="map" class="w-full h-full min-h-[400px] rounded-lg shadow-xl")
 
 </template>

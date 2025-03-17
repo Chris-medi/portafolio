@@ -1,6 +1,6 @@
 import type { Projects } from "@interfaces/global";
 
-export function requestGetProject(): Projects[] {
+export async function requestGetProject(): Promise<Projects[]> {
   return [
     {
       title: "Automation x account",

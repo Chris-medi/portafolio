@@ -11,8 +11,8 @@ const databases = ref<Record<string, string[]>>({});
 
 const tools = ref<Record<string, string[]>>({});
 
-onMounted(() => {
-  const skills = requestGetSkills();
+onMounted(async () => {
+  const skills = await requestGetSkills();
   programing_languages.value = skills.programing_languages;
   frameworks.value = skills.frameworks;
   databases.value = skills.databases;
@@ -21,7 +21,7 @@ onMounted(() => {
 </script>
 
 <template lang="pug">
-motion(id="skills" is="section" preset="slideVisibleBottom" class="sm:px-8 m-8" :delay="200" :duration="1000")
+motion(id="skills" is="section" preset="slideVisibleOnceBottom" class="sm:px-8 m-8" :delay="200" :duration="1000")
   h2.text-4xl.font-bold.mb-8.underline.decoration-sky-500.underline-offset-8.decoration-4 SKILLS
   p.text-lg.mb-12.text-gray-600
     | My skills as a Full-Stack Software Engineer include a strong aptitude for learning new technologies and programming languages,
