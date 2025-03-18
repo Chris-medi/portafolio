@@ -43,7 +43,7 @@ motion(id="skills" is="section" preset="slideVisibleOnceBottom" class="sm:px-8 m
           strong.text-blue-500.mx-4 {{ category }}:
           span.ml-8 {{ items.join(', ') }}
 
-    .bg-white.p-6.rounded-xl.shadow-lg.border.border-blue-100.transform.transition-all.duration-300(class="hover:scale-105")
+    .bg-white.p-6.rounded-xl.shadow-lg.border.border-blue-100.transform.transition-all.duration-300(class="hover:scale-105 md:col-span-2 lg:col-span-1")
       h3.text-xl.font-semibold.mb-4 Bases de Datos
       ul.space-y-3.text-gray-700
         li.flex.flex-col.space-y-1(v-for="(items, category) in databases")

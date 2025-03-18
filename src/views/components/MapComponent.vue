@@ -17,6 +17,9 @@ onMounted(() => {
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map.value);
 
+  L.Icon.Default.prototype.options.shadowSize = [0, 0];
+  L.Icon.Default.prototype.options.imagePath =
+    "https://i.ibb.co/gZ9pSkZT/marker-icon.png";
   L.marker([coord[0], coord[1]])
     .addTo(map.value)
     .bindPopup("I'm here")
